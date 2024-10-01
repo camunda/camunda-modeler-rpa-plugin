@@ -9,6 +9,6 @@
  */
 
 module.exports = {
-  script: './dist/client.js',
+  script: './client/client.js',
   name: 'robot-tab'
 };
