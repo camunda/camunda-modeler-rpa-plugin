@@ -161,9 +161,6 @@ function CarbonRunForm(props) {
       setIsRunning(false);
       setOutput(response);
     } catch (error) {
-      console.log('heeeeeelp', error);
-
-      console.error(error);
       setOutput({ stdOut: error.message });
       setIsRunning(false);
       return;

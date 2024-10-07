@@ -10,14 +10,14 @@
 
 import { React } from 'react';
 
-// import RunButton from './RunButton';
+import RunButton from './RunButton';
 import RobotOutputTab from './RobotOutputTab';
 
 export default function(props) {
 
   return <>
     <RobotOutputTab { ...props }></RobotOutputTab>
-    {/* <RunButton { ...props }></RunButton> */}
+    <RunButton { ...props }></RunButton>
   </>;
 
 }

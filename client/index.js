@@ -17,6 +17,7 @@ import component from './robot';
 import initialRobot from './robot/initial.robot';
 import { Fill } from 'camunda-modeler-plugin-helpers/components';
 
+import RPAIcon from './RPAicon.svg';
 
 const tab = {
   robot: {
@@ -31,7 +32,7 @@ const tab = {
       return component;
     },
     getIcon() {
-      return null;
+      return RPAIcon;
     },
     getInitialContents() {
       return initialRobot;
@@ -46,7 +47,10 @@ const tab = {
       return [ {
         label: 'Robot',
         group: 'Camunda 8',
-        action: [ 'create-diagram', 'robot' ]
+        action: 'create-diagram',
+        options: {
+          type: 'robot'
+        }
       } ];
     },
     getLinter() {
