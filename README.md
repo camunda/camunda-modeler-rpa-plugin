@@ -12,4 +12,4 @@ This plugin adds editing support for `.robot` files and the Camunda RPA runtime.
 
 ## License
 
-MIT
+These source files are made available under the [Camunda License Version 1.0](/LICENSE).
