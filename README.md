@@ -1,3 +1,6 @@
+> [!NOTE]  
+> **Experimental Features Notice:** The code in this repository is in the experimental stage and may be unstable. Use at your own risk and avoid usage in production environments.
+
 # Camunda Modeler RPA Plugin
 
 [![Compatible with Camunda Modeler version 5.29+](https://img.shields.io/badge/Camunda%20Modeler-5.29+-blue.svg)](https://github.com/camunda/camunda-modeler)
