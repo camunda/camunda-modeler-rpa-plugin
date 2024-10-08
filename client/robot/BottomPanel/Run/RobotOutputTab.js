@@ -92,7 +92,7 @@ function RobotReport(props) {
           <code type="multi" className="text-mono"><pre style={ { overflow: 'auto', userSelect: 'text' } }>{output.stdOut}</pre></code> :
           <CodeSnippetSkeleton type="multi" />}
         {output.log && <Button onClick={ () => setShowReport('log') }>Show Log</Button>}
-        {showReport && <Report content={ output.log } onClose={ () => setShowReport(false) } />}
+        {showReport && <Report content={ output.log } path={ output.logPath } onClose={ () => setShowReport(false) } />}
         {/* </Stack> */}
       </Tile>
     </Column>
@@ -110,17 +110,20 @@ function RobotReport(props) {
 function Report(props) {
   const {
     onClose,
-    content
+    path
   } = props;
 
   return (
     <Modal onClose={ onClose } className="robotOutput">
 
       <Modal.Body>
-        <iframe srcDoc={ content } style={ {
+        <iframe 
+        sandbox="allow-scripts"
+        src={"file://" + path} 
+        style={ {
           width: '100%',
           height: '70vh',
-        } }></iframe>
+        } } />
       </Modal.Body>
 
       <Modal.Footer>
