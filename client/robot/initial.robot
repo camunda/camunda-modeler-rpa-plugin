@@ -2,12 +2,12 @@
 Documentation       Robot to solve the first challenge at rpachallenge.com,
 ...                 which consists of filling a form that randomly rearranges
 ...                 itself for ten times, with data taken from a provided
-...                 Microsoft Excel file.
+...                 Microsoft Excel file. Return Congratulation message to Camunda.
 
 Library             RPA.Browser.Playwright
 Library             RPA.Excel.Files
 Library             RPA.HTTP
-
+Library             Camunda
 
 *** Tasks ***
 Complete the challenge
@@ -15,10 +15,9 @@ Complete the challenge
     Fill the forms
     Collect the results
 
-
 *** Keywords ***
 Start the challenge
-    New Browser
+    New Browser     headless=false
     New Page    http://rpachallenge.com/
     RPA.HTTP.Download
     ...    http://rpachallenge.com/assets/downloadFiles/challenge.xlsx
@@ -49,5 +48,6 @@ Fill and submit the form
     Click    input[type=submit]
 
 Collect the results
-    Take Screenshot  %{ROBOT_ARTIFACTS}${/}result  selector=css=div.congratulations
+    ${resultText}=      Get Text        selector=css=div.congratulations .message2
+    Set Output Variable     resultText      ${resultText} 
     Close Browser
