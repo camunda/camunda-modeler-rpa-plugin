@@ -1,5 +1,5 @@
-> [!NOTE]  
-> **Experimental Features Notice:** The code in this repository is in the experimental stage and may be unstable. Use at your own risk and avoid usage in production environments.
+> [!CAUTION]  
+> **DEPRECATED** The code in this repository is deprecated. It is replaced by the [RPA feature](https://docs.camunda.io/docs/8.7/components/rpa/overview/) of the Camunda Modeler. Please remove this plugin and update to Camunda Modeler 5.34+.
 
 # Camunda Modeler RPA Plugin
 
